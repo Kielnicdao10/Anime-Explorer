@@ -322,6 +322,8 @@ i{
 .description.show{
     
     display: block;
+     overflow: visible;
+    height: auto;
 }
 
 #modal{
