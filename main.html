@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anime Explorer</title>
+    <link rel="stylesheet" href="style.css">
+      <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+</head>
+<body>
+   
+   <nav class="nav-container">
+    <h1>KielAnime Explorer</h1>
+
+    <div class="nav-right">
+      
+       <a href="section.html?category=airing"> Top Airing</a>
+        <a href="section.html?category=rated">Top Rated</a>
+
+        <a href="section.html?category=popular">Popular</a>
+
+        <a href="section.html?category=upcoming">Upcoming</a>
+    </div>
+</nav>
+
+   <form id="form">
+        <div class="search-bar">
+            <input type="text" id="search" placeholder="Search an anime..." autocomplete="off">
+
+            <button id="searchBtn">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+        </div>
+    </form>
+
+<div class="card-container" id="search-Results"></div>
+   
+
+    <div class="main-content">
+       
+        <section  id="top-airing">
+            <div class="section-header">
+                <h2 class="title"> 🔥 Top Airing </h2>
+                 <a class="see" href="section.html?category=airing">
+                    See All →
+                </a>
+            </div>
+            <div class="card-container" id="topCard"> 
+                
+            
+            </div>
+
+        </section>
+
+        <section id="top-rated">
+            <div class="section-header">
+                <h2 class="title"> ⭐ Top Rated </h2>
+                <a class="see" href="section.html?category=rated">See All →</a>
+
+            </div>
+            <div class="card-container" id="ratedCard">
+                
+
+            </div>
+        </section>
+
+        <section id="most-popular">
+            <div class="section-header">
+                <h2 class="title" id="popular"> ❤️ Most Popular </h2>
+                <a class="see" href="section.html?category=popular">See All →</a>
+                
+               
+            </div>
+               <div class="card-container" id="popularCard"></div>
+        </section>
+
+        <section id="upcoming" > 
+            <div class="section-header">
+                <h2 class="title" id="upcoming">  📅 Upcoming   </h2>
+                <a class="see" href="section.html?category=upcoming">
+                    See All →
+                </a>
+            </div>
+            <div class="card-container" id="upcomingCard">
+            
+
+            </div>
+
+            
+        </section>
+
+        
+    </div>
+
+    <div class="modal" id="modal">
+            <div class="modal-content" id="modal-content">
+                <button class="close-btn" id="close">✖</button>
+                <img id="modalImage">
+                <h2 id="modalTitle"></h2>
+
+                <p id="modalDescription"></p>
+            </div>
+        </div>
+    <script type="module" src="main.js"></script>
+</body>
+</html>

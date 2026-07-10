@@ -1,0 +1,500 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-image: url("animebg.jpg");
+    min-width: 100%;
+    min-height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+body::before{
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,.35);
+    z-index: -1;
+}
+
+.nav-container{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:10px 70px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+     background: linear-gradient(
+        to right,
+        rgba(5,15,35,.92),
+        rgba(15,35,70,.75),
+        rgba(5,15,35,.92)
+    );
+
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+
+    border-bottom: 1px solid rgba(103,212,255,.25);
+
+    box-shadow:
+        0 8px 30px rgba(0,0,0,.4),
+        0 0 15px rgba(103,212,255,.12);
+    transition: background .3s ease, box-shadow .3s ease;
+}
+
+.nav-right{
+    display:flex;
+    align-items:center;
+    gap:30px;
+}
+
+.search-bar{
+    display:flex;
+    align-items:center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+
+.main-content{
+    display: grid;
+    grid-auto-flow: row;
+    padding: 10px 70px;
+    font-size: 1.5rem;
+    row-gap: 60px;
+    
+}
+
+a{
+    
+    text-decoration: none;
+    color: whitesmoke;
+    font-size: 1.2rem;
+    
+}
+
+ a:hover{
+    color:#67d4ff;
+}
+
+
+
+
+#searchBtn{
+    display:flex;
+    align-items:center;
+    justify-content: center;
+    margin-right: 10px;
+    
+}
+
+
+.nav-container h1{
+    font-size: 2.4rem;
+    letter-spacing: 1px;
+    font-weight: 700;
+    margin-right: 40px;
+    background: linear-gradient(to left, #67d4ff, #ffffff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+
+}
+
+input {
+    background: rgba(255,255,255,0.12);
+    backdrop-filter: blur(10px);
+    color: white;
+    border: 1px solid rgba(255,255,255,0.25);
+    height: 50px;
+    width: 400px;
+    padding: 10px;
+    border-radius: 5px;
+    margin-right: 2px;
+    font-size: 1.2rem;
+    
+}
+
+
+#search{
+    
+    width:min(700px, 45vw);
+    margin-right: 5px;
+
+}
+
+input::placeholder {
+    color: rgba(255,255,255,0.8);
+    font-size: 1.1rem;
+}
+
+button{
+    height: 50px;
+    width: 50px;
+    border-radius: 5px;
+    border: 1px solid rgba(255,255,255,0.25);
+    margin-right: 20px;
+    background: rgba(173, 216, 230, 1.0);
+}
+button:hover{
+    transform: scale(1.1);
+}
+i{
+    color: #32a8d6;
+}
+
+.title{
+    display:inline-block;
+    color:lightblue;
+    margin-bottom:20px;
+    border-bottom:3px solid #67d4ff;
+    padding-bottom:6px;
+    padding-right:10px;
+}
+
+.card-container{
+
+    /* Prevents the container from becoming too wide.
+       Width will be 90% of the screen,
+       but never larger than 1300px. */
+    width: min(1300px,90%);
+
+    /* Centers the whole container */
+    margin: 0 auto 80px;
+
+    /* Turns this into a CSS Grid container */
+    display: grid;
+
+    /* Creates responsive columns.
+
+       minmax(350px,1fr)
+
+       Minimum width:
+       350px
+
+       Maximum width:
+       Fill available space.
+
+       auto-fit automatically creates
+       as many columns as possible.
+    */
+    grid-template-columns: repeat(auto-fit,minmax(350px,1fr));
+
+    /* Space between cards */
+    gap: 20px;
+
+    height: fit-content;
+   
+}
+
+
+/* ===========================
+   INDIVIDUAL CARD
+   =========================== */
+
+.card {
+
+    /* Semi-transparent white background */
+    background: rgba(255,255,255,.08);
+
+    /* Blurs whatever is behind the card
+       (Glassmorphism effect) */
+    backdrop-filter: blur(15px);
+
+    /* Rounded corners */
+    border-radius: 15px;
+
+    /* Prevents the image from sticking outside */
+    overflow: hidden;
+
+    /* Thin transparent border */
+    border: 1px solid rgba(255,255,255,.15);
+
+    /* Makes hover animation smooth */
+    transition: .3s;
+}
+
+
+.card img{
+
+    width:100%;
+    height:auto;
+    max-height: 500px;
+   
+}
+
+
+/* Runs only when the mouse is over the card */
+
+.card:hover{
+
+    /* Lifts the card upward */
+    transform: translateY(-20px);
+    
+    /* Larger shadow for depth */
+    box-shadow: 0 15px 40px rgba(0,0,0,.35);
+}
+
+
+.card-body{
+
+    /* Space around the text */
+    padding: 20px;
+
+    /* White text */
+    color: white;
+}
+
+
+.card h2{
+
+    /* Space below title */
+    margin-bottom: 12px;
+
+    /* Larger title */
+    font-size: 1.5rem;
+}
+
+
+.card p{
+
+    /* Space between paragraphs */
+    margin-bottom: 10px;
+
+    /* Makes long text easier to read */
+    line-height: 1.6;
+    font-size: 1.1rem;
+    
+}
+
+.see{
+    width: 80px;
+    height: 30px;
+    background: none;
+    border: none;
+    color: whitesmoke;
+    font-size: 1rem ;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.see:hover{
+    color: #32a8d6;
+}
+
+.card button{
+    display: grid;
+    padding: 5px;
+    margin-top: 5px;
+    width: 200px;
+    height: 30px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.description{
+   
+    display: none;
+}
+
+.description.show{
+    
+    display: block;
+}
+
+#modal{
+    display: none;
+    position: fixed;
+    inset: 0;
+
+    justify-content: center;
+    align-items: center;
+    background: rgba(0,0,0,.7);
+    color: aliceblue;
+}
+
+#modal.show{
+   display: flex;
+}
+
+.modal-content{
+    width: 700px;
+    max-width: 90%;
+    max-height: 80vh;
+    overflow-y: auto;
+
+    background: rgba(20,20,30,.85);
+    backdrop-filter: blur(18px);
+
+    border: 1px solid rgba(255,255,255,.15);
+    border-radius: 20px;
+
+    padding: 30px;
+
+    box-shadow: 0 20px 50px rgba(0,0,0,.5);
+
+    position: relative;
+    color: white;
+}
+
+.close-btn{
+    position: absolute;
+    top: 15px;
+    right: 18px;
+
+    width: 40px;
+    height: 40px;
+
+    border: none;
+    border-radius: 50%;
+
+    cursor: pointer;
+
+    font-size: 1.3rem;
+
+    background: rgba(255,255,255,.1);
+    color: white;
+
+    transition: .3s;
+}
+
+.close-btn:hover{
+    background: #67d4ff;
+    color: black;
+}
+
+#modalTitle{
+    font-size: 1.7rem;
+    line-height: 1.3;
+    margin-bottom: 20px;
+    text-align: center;
+    background: linear-gradient(to right, #67d4ff, #ffffff);
+    background-clip: text;
+    -webkit-background-clip: text;
+
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+}
+
+#modalDescription{
+    font-size: 1rem;
+    line-height: 1.8;
+    color: rgba(255,255,255,.9);
+}
+
+#modalImage{
+    display: block;
+    width: 220px;
+    margin: 20px auto;
+    border-radius: 15px;
+    width:220px;
+    border-radius:16px;
+    box-shadow:0 15px 35px rgba(0,0,0,.45);
+    transition:.3s;
+}   
+
+#modalImage:hover{
+    transform:scale(1.03);
+}
+
+.synopsis-title{
+    color:#67d4ff;
+    font-size:1.2rem;
+    margin:20px 0 10px;
+}
+
+.modal-content::-webkit-scrollbar{
+    width:8px;
+}
+
+.modal-content::-webkit-scrollbar-track{
+    background:transparent;
+}
+
+.modal-content::-webkit-scrollbar-thumb{
+    background:#67d4ff;
+    border-radius:20px;
+}
+
+#title{
+  color:#67d4ff;
+}
+
+
+.load-container {
+    display: flex;
+    justify-content: center;
+    margin: 40px 0;
+}
+
+#load {
+    width: 200px;
+    height: 50px;
+    color:#32a8d6;
+}
+
+.modal-content {
+    position: relative;
+    overflow: hidden;
+}
+
+.modal-content::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background-image: var(--bg-image);
+    background-size: cover;
+    background-position: center;
+
+    filter: blur(5px);
+    transform: scale(1.1);
+
+    z-index: -2;
+}
+
+.modal-content::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.65);
+    z-index: -1;
+}
+
+.error-message {
+    width: 100%;
+    padding: 30px;
+    text-align: center;
+
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 12px;
+
+    color: white;
+}
+
+.error-message h3 {
+    margin-bottom: 10px;
+    color: #ffb347;
+}
+
+.error-message p {
+    opacity: 0.9;
+}
+
+#search-Results{
+    margin-top: 60px;
+}
+
+#tryBtn{
+    margin-top: 10px;
+    padding: 5px;
+    width: 90px;
+    color:#32a8d6   ;
+}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anime Explorer</title>
+    <link rel="stylesheet" href="style.css">
+      <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+</head>
+<body>
+   
+   <nav class="nav-container">
+    <h1>KielAnime Explorer</h1>
+
+    <div class="nav-right">
+        <a href="main.html"> Home </a>
+        <a href="section.html?category=airing">Top Airing</a>
+        <a href="section.html?category=rated">Top Rated</a>
+        <a href="section.html?category=popular">Most Popular</a>
+        <a href="section.html?category=upcoming">Upcoming</a>
+      
+    </div>
+</nav>
+
+    
+
+    <div class="main-content">
+       
+        <section  id="top-airing">
+            <div class="section-header">
+                <h2  id="title"> 🔥 Top Airing </h2>
+            </div>
+            <div class="card-container" id="topCard"> 
+                
+            
+            </div>
+
+        </section>
+
+       
+
+        
+    </div>
+
+    <div class="modal" id="modal">
+            <div class="modal-content" id="modal-content">
+                <button class="close-btn" id="close">✖</button>
+                <img id="modalImage">
+                <h2 id="modalTitle"></h2>
+
+                <p id="modalDescription"></p>
+            </div>
+        </div>
+    <script type="module" src="section.js"></script>
+    <div class="load-container">
+        <button id="load"> Load More </button>
+    </div>
+</body>
+</html>
