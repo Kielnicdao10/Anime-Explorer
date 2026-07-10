@@ -322,7 +322,7 @@ i{
 .description.show{
     
     display: block;
-     overflow: visible;
+    overflow: visible;
     height: auto;
 }
 
@@ -360,7 +360,11 @@ i{
     position: relative;
     color: white;
 }
-
+#modalDescription{
+    white-space: pre-line;
+    line-height: 1.8;
+    overflow-wrap: break-word;
+}
 .close-btn{
     position: absolute;
     top: 15px;
