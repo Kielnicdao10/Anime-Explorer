@@ -364,6 +364,10 @@ i{
     white-space: pre-line;
     line-height: 1.8;
     overflow-wrap: break-word;
+    display: -webkit-box;
+    -webkit-line-clamp: 10;
+    -webkit-box-orient: vertical;
+    overflow: hidden
 }
 .close-btn{
     position: absolute;
